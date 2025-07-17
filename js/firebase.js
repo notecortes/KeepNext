@@ -4,10 +4,10 @@ import { appState } from './state.js';
 // Configuración de Firebase - REEMPLAZA CON TUS DATOS
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyC8rvpOcMdbE0Rd3NQeH73UKdsRtcGfHPY",
-    authDomain: "saveitforlater-77eef.firebaseapp.com",
-    projectId: "saveitforlater-77eef",
-    storageBucket: "saveitforlater-77eef.firebasestorage.app",
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxx",
+    authDomain: "xxxxxxxxxxxxxxxxxxxxxxxx.firebaseapp.com",
+    projectId: "xxxxxxxxxxxxxxxxxxxxxxxx",
+    storageBucket: "xxxxxxxxxxxxxxxxxxxxxxxx.firebasestorage.app",
     messagingSenderId: "242756676535",
     appId: "1:242756676535:web:1c77e6c0da73ecf0a89632",
     measurementId: "G-VDL5PNCD3R"
