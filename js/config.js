@@ -39,12 +39,12 @@ function getGoogleClientId() {
   // Configuraciones por dominio
   const domainConfigs = {
     // Desarrollo local
-    'localhost': "242756676535-clg9vecmutibkr2nib7np1tr38mlptp2.apps.googleusercontent.com",
-    '127.0.0.1': "242756676535-clg9vecmutibkr2nib7np1tr38mlptp2.apps.googleusercontent.com",
+    'localhost': "xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+    '127.0.0.1': "xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
     
     // Tu dominio de producción
-    'ncoge.com': "242756676535-clg9vecmutibkr2nib7np1tr38mlptp2.apps.googleusercontent.com",
-    'www.ncoge.com': "242756676535-clg9vecmutibkr2nib7np1tr38mlptp2.apps.googleusercontent.com",
+    'ncoge.com': "xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+    'www.ncoge.com': "xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
     // 'tu-dominio.com': "TU_CLIENT_ID_PARA_ESTE_DOMINIO",
     // 'otro-dominio.netlify.app': "OTRO_CLIENT_ID",
   };
@@ -55,7 +55,7 @@ function getGoogleClientId() {
   }
   
   // Client ID por defecto (usa el de tu proyecto Firebase)
-  return "242756676535-clg9vecmutibkr2nib7np1tr38mlptp2.apps.googleusercontent.com";
+  return "xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com";
 }
 
 // Función para verificar si la configuración está completa
