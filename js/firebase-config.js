@@ -2,10 +2,10 @@
 // Esta configuración está basada en tu firebase.key.txt
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyC8rvpOcMdbE0Rd3NQeH73UKdsRtcGfHPY",
-  authDomain: "saveitforlater-77eef.firebaseapp.com",
-  projectId: "saveitforlater-77eef",
-  storageBucket: "saveitforlater-77eef.firebasestorage.app",
+  apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  authDomain: "xxxxxxxxxxxxxxxxxxxxxxxx.firebaseapp.com",
+  projectId: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  storageBucket: "xxxxxxxxxxxxxxxxxxxxxxxx.firebasestorage.app",
   messagingSenderId: "242756676535",
   appId: "1:242756676535:web:b781f47402a726dda89632",
   measurementId: "G-25PN9DT040"
@@ -13,7 +13,7 @@ export const firebaseConfig = {
 
 // Información del proyecto
 export const projectInfo = {
-  projectId: "saveitforlater-77eef",
-  clientId: "242756676535-clg9vecmutibkr2nib7np1tr38mlptp2.apps.googleusercontent.com",
-  authDomain: "saveitforlater-77eef.firebaseapp.com"
+  projectId: "xxxxxxxxxxxxxxxxxxxxxxxx",
+  clientId: "xxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+  authDomain: "xxxxxxxxxxxxxxxxxxxxxxxx.firebaseapp.com"
 };
