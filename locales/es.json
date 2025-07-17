@@ -1,0 +1,176 @@
+{
+  "app": {
+    "title": "KeepNext",
+    "subtitle": "Organiza tus películas, series, libros y más"
+  },
+  "navigation": {
+    "categories": "Categorías",
+    "items": "Elementos",
+    "settings": "Configuración"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "add": "Añadir",
+    "apply": "Aplicar",
+    "use": "Usar",
+    "preview": "Ver",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "new": "Nuevo",
+    "create": "Crear"
+  },
+  "categories": {
+    "title": "Categorías",
+    "new": "Nueva Categoría",
+    "name": "Nombre de la categoría",
+    "placeholder": "Ej: Películas, Series, Libros...",
+    "count": "{{count}} elementos",
+    "count_singular": "{{count}} elemento",
+    "empty": "No hay categorías creadas",
+    "empty_subtitle": "Crea tu primera categoría para comenzar",
+    "delete_confirm": "¿Estás seguro de que quieres eliminar esta categoría y todos sus elementos?",
+    "name_exists": "Ya existe una categoría con ese nombre"
+  },
+  "items": {
+    "title": "Elementos",
+    "new": "Nuevo Elemento",
+    "edit": "Editar Elemento",
+    "title_field": "Título",
+    "title_placeholder": "Nombre del elemento",
+    "description": "Descripción",
+    "description_placeholder": "Descripción opcional del elemento",
+    "image": "Imagen (URL)",
+    "image_placeholder": "https://ejemplo.com/imagen.jpg",
+    "where_to_watch": "Dónde ver",
+    "where_to_watch_placeholder": "Netflix, Amazon Prime, etc.",
+    "rating": "Valoración",
+    "search_info": "Buscar información",
+    "search_placeholder": "Buscar información automáticamente...",
+    "empty": "No hay elementos en esta categoría",
+    "empty_subtitle": "Añade tu primer elemento",
+    "delete_confirm": "¿Estás seguro de que quieres eliminar este elemento?",
+    "select_category_first": "Selecciona una categoría primero",
+    "title_required": "Por favor, ingresa un título"
+  },
+  "search": {
+    "searching": "Buscando información...",
+    "found": "✅ Se encontraron {{count}} resultados para \"{{query}}\"",
+    "found_single": "✅ Información encontrada:",
+    "not_found": "No se encontró información para este título. Intenta con otro nombre o verifica la ortografía.",
+    "error": "Error al buscar información. Verifica tu conexión a internet e intenta de nuevo.",
+    "apply_info": "Aplicar información",
+    "compact_view": "Vista compacta",
+    "expanded_view": "Vista expandida",
+    "show_more": "Ver más...",
+    "show_less": "Ver menos...",
+    "preview_title": "Vista previa: {{title}}",
+    "full_description": "Descripción completa:",
+    "use_result": "Usar este resultado",
+    "tip": "💡 Haz clic en \"📥 Usar\" para aplicar la información, o \"👁️ Ver\" para más detalles",
+    "filters": {
+      "all": "Todos",
+      "movie": "Películas",
+      "series": "Series",
+      "book": "Libros",
+      "game": "Videojuegos"
+    },
+    "sort": {
+      "relevance": "Relevancia",
+      "title": "Título A-Z",
+      "year": "Año (nuevo-viejo)",
+      "rating": "Rating (alto-bajo)"
+    }
+  },
+  "metadata": {
+    "year": "Año",
+    "genre": "Género",
+    "director": "Director",
+    "seasons": "temporadas",
+    "authors": "Autor(es)",
+    "published_date": "Fecha de publicación",
+    "pages": "páginas",
+    "release_date": "Fecha de lanzamiento",
+    "genres": "Géneros",
+    "platforms": "Plataformas",
+    "rating_imdb": "IMDB",
+    "rating_metacritic": "Metacritic",
+    "no_image": "Sin imagen",
+    "cuisine": "Cocina",
+    "price_range": "Precio",
+    "location": "Ubicación",
+    "phone": "Teléfono",
+    "hours": "Horario",
+    "address": "Dirección",
+    "website": "Sitio web"
+  },
+  "sorting": {
+    "title": "Ordenar por:",
+    "manual": "Orden manual",
+    "newest": "Más recientes",
+    "oldest": "Más antiguos",
+    "title_asc": "Título A-Z",
+    "title_desc": "Título Z-A",
+    "rating_high": "Mejor valorados",
+    "rating_low": "Peor valorados",
+    "direction_asc": "ascendente",
+    "direction_desc": "descendente",
+    "change_direction": "Cambiar dirección ({{direction}})",
+    "manual_hint": "💡 Arrastra los elementos para reordenarlos manualmente"
+  },
+  "filter": {
+    "placeholder": "Filtrar elementos...",
+    "clear": "Limpiar filtro",
+    "no_results": "No se encontraron elementos que coincidan con \"{{query}}\"",
+    "results_count": "Mostrando {{count}} de {{total}} elementos"
+  },
+  "theme": {
+    "toggle": "Cambiar tema",
+    "light": "Tema claro",
+    "dark": "Tema oscuro"
+  },
+  "language": {
+    "select": "Idioma:",
+    "spanish": "Español",
+    "english": "English",
+    "change_success": "🌍 Idioma cambiado a: {{language}}"
+  },
+  "validation": {
+    "required_field": "Este campo es obligatorio",
+    "invalid_url": "URL no válida",
+    "min_length": "Mínimo {{min}} caracteres",
+    "max_length": "Máximo {{max}} caracteres"
+  },
+  "messages": {
+    "saved": "Guardado correctamente",
+    "deleted": "Eliminado correctamente",
+    "error": "Ha ocurrido un error",
+    "loading": "Cargando...",
+    "no_connection": "Sin conexión a internet",
+    "try_again": "Inténtalo de nuevo"
+  },
+  "accessibility": {
+    "close_modal": "Cerrar modal",
+    "delete_item": "Eliminar elemento",
+    "edit_item": "Editar elemento",
+    "drag_handle": "Arrastrar para reordenar",
+    "star_rating": "Valoración de {{rating}} estrellas",
+    "image_alt": "Imagen de {{title}}"
+  },
+  "auth": {
+    "welcome": "Bienvenido",
+    "enter_name": "Ingresa tu nombre para continuar:",
+    "name_placeholder": "Tu nombre",
+    "local_storage_note": "Tus datos se guardarán localmente en este navegador.",
+    "continue_local": "Continuar sin cuenta",
+    "loading_google": "Cargando login con Google...",
+    "delete_local_confirm": "¿Estás seguro de que quieres eliminar tu usuario local y todos los datos?",
+    "login_error": "Error al iniciar sesión. Por favor, intenta de nuevo.",
+    "google_not_available": "Google OAuth no está disponible en este dominio.",
+    "using_local_mode": "Usando modo local. Tus datos se guardarán en este navegador."
+  }
+}

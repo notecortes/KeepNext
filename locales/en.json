@@ -1,0 +1,176 @@
+{
+  "app": {
+    "title": "KeepNext",
+    "subtitle": "Organize your movies, series, books and more"
+  },
+  "navigation": {
+    "categories": "Categories",
+    "items": "Items",
+    "settings": "Settings"
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "search": "Search",
+    "add": "Add",
+    "apply": "Apply",
+    "use": "Use",
+    "preview": "Preview",
+    "filter": "Filter",
+    "sort": "Sort",
+    "new": "New",
+    "create": "Create"
+  },
+  "categories": {
+    "title": "Categories",
+    "new": "New Category",
+    "name": "Category name",
+    "placeholder": "e.g: Movies, TV Shows, Books...",
+    "count": "{{count}} items",
+    "count_singular": "{{count}} item",
+    "empty": "No categories created",
+    "empty_subtitle": "Create your first category to get started",
+    "delete_confirm": "Are you sure you want to delete this category and all its items?",
+    "name_exists": "A category with that name already exists"
+  },
+  "items": {
+    "title": "Items",
+    "new": "New Item",
+    "edit": "Edit Item",
+    "title_field": "Title",
+    "title_placeholder": "Item name",
+    "description": "Description",
+    "description_placeholder": "Optional item description",
+    "image": "Image (URL)",
+    "image_placeholder": "https://example.com/image.jpg",
+    "where_to_watch": "Where to watch",
+    "where_to_watch_placeholder": "Netflix, Amazon Prime, etc.",
+    "rating": "Rating",
+    "search_info": "Search information",
+    "search_placeholder": "Search information automatically...",
+    "empty": "No items in this category",
+    "empty_subtitle": "Add your first item",
+    "delete_confirm": "Are you sure you want to delete this item?",
+    "select_category_first": "Select a category first",
+    "title_required": "Please enter a title"
+  },
+  "search": {
+    "searching": "Searching information...",
+    "found": "✅ Found {{count}} results for \"{{query}}\"",
+    "found_single": "✅ Information found:",
+    "not_found": "No information found for this title. Try another name or check the spelling.",
+    "error": "Error searching information. Check your internet connection and try again.",
+    "apply_info": "Apply information",
+    "compact_view": "Compact view",
+    "expanded_view": "Expanded view",
+    "show_more": "Show more...",
+    "show_less": "Show less...",
+    "preview_title": "Preview: {{title}}",
+    "full_description": "Full description:",
+    "use_result": "Use this result",
+    "tip": "💡 Click \"📥 Use\" to apply information, or \"👁️ Preview\" for more details",
+    "filters": {
+      "all": "All",
+      "movie": "Movies",
+      "series": "TV Shows",
+      "book": "Books",
+      "game": "Games"
+    },
+    "sort": {
+      "relevance": "Relevance",
+      "title": "Title A-Z",
+      "year": "Year (new-old)",
+      "rating": "Rating (high-low)"
+    }
+  },
+  "metadata": {
+    "year": "Year",
+    "genre": "Genre",
+    "director": "Director",
+    "seasons": "seasons",
+    "authors": "Author(s)",
+    "published_date": "Publication date",
+    "pages": "pages",
+    "release_date": "Release date",
+    "genres": "Genres",
+    "platforms": "Platforms",
+    "rating_imdb": "IMDB",
+    "rating_metacritic": "Metacritic",
+    "no_image": "No image",
+    "cuisine": "Cuisine",
+    "price_range": "Price",
+    "location": "Location",
+    "phone": "Phone",
+    "hours": "Hours",
+    "address": "Address",
+    "website": "Website"
+  },
+  "sorting": {
+    "title": "Sort by:",
+    "manual": "Manual order",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "title_asc": "Title A-Z",
+    "title_desc": "Title Z-A",
+    "rating_high": "Highest rated",
+    "rating_low": "Lowest rated",
+    "direction_asc": "ascending",
+    "direction_desc": "descending",
+    "change_direction": "Change direction ({{direction}})",
+    "manual_hint": "💡 Drag items to reorder them manually"
+  },
+  "filter": {
+    "placeholder": "Filter items...",
+    "clear": "Clear filter",
+    "no_results": "No items found matching \"{{query}}\"",
+    "results_count": "Showing {{count}} of {{total}} items"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light theme",
+    "dark": "Dark theme"
+  },
+  "language": {
+    "select": "Language:",
+    "spanish": "Español",
+    "english": "English",
+    "change_success": "🌍 Language changed to: {{language}}"
+  },
+  "validation": {
+    "required_field": "This field is required",
+    "invalid_url": "Invalid URL",
+    "min_length": "Minimum {{min}} characters",
+    "max_length": "Maximum {{max}} characters"
+  },
+  "messages": {
+    "saved": "Saved successfully",
+    "deleted": "Deleted successfully",
+    "error": "An error occurred",
+    "loading": "Loading...",
+    "no_connection": "No internet connection",
+    "try_again": "Try again"
+  },
+  "accessibility": {
+    "close_modal": "Close modal",
+    "delete_item": "Delete item",
+    "edit_item": "Edit item",
+    "drag_handle": "Drag to reorder",
+    "star_rating": "{{rating}} star rating",
+    "image_alt": "Image of {{title}}"
+  },
+  "auth": {
+    "welcome": "Welcome",
+    "enter_name": "Enter your name to continue:",
+    "name_placeholder": "Your name",
+    "local_storage_note": "Your data will be saved locally in this browser.",
+    "continue_local": "Continue without account",
+    "loading_google": "Loading Google login...",
+    "delete_local_confirm": "Are you sure you want to delete your local user and all data?",
+    "login_error": "Login error. Please try again.",
+    "google_not_available": "Google OAuth is not available for this domain.",
+    "using_local_mode": "Using local mode. Your data will be saved in this browser."
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generar Favicon ICO</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32" style="border: 1px solid #ccc;"></canvas>
+    <br><br>
+    <button onclick="generateFavicon()">Generar Favicon ICO</button>
+    <br><br>
+    <a id="download" style="display: none;">Descargar favicon.ico</a>
+
+    <script>
+        function generateFavicon() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Limpiar canvas
+            ctx.clearRect(0, 0, 32, 32);
+            
+            // Fondo con gradiente
+            const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 32, 32);
+            
+            // Estantería (líneas horizontales)
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            // Estante superior
+            ctx.moveTo(4, 8);
+            ctx.lineTo(28, 8);
+            // Estante medio
+            ctx.moveTo(4, 16);
+            ctx.lineTo(28, 16);
+            // Estante inferior
+            ctx.moveTo(4, 24);
+            ctx.lineTo(28, 24);
+            ctx.stroke();
+            
+            // Elementos de colección (rectángulos pequeños)
+            // Fila superior
+            ctx.fillStyle = '#ff6b6b'; // Rojo
+            ctx.fillRect(6, 4, 3, 3);
+            ctx.fillStyle = '#4ecdc4'; // Verde azulado
+            ctx.fillRect(11, 4, 3, 3);
+            ctx.fillStyle = '#45b7d1'; // Azul
+            ctx.fillRect(16, 4, 3, 3);
+            ctx.fillStyle = '#f9ca24'; // Amarillo
+            ctx.fillRect(21, 4, 3, 3);
+            
+            // Fila media
+            ctx.fillStyle = '#6c5ce7'; // Púrpura
+            ctx.fillRect(6, 12, 3, 3);
+            ctx.fillStyle = '#fd79a8'; // Rosa
+            ctx.fillRect(11, 12, 3, 3);
+            ctx.fillStyle = '#00b894'; // Verde
+            ctx.fillRect(16, 12, 3, 3);
+            ctx.fillStyle = '#e17055'; // Naranja
+            ctx.fillRect(21, 12, 3, 3);
+            
+            // Fila inferior
+            ctx.fillStyle = '#a29bfe'; // Lavanda
+            ctx.fillRect(6, 20, 3, 3);
+            ctx.fillStyle = '#fd79a8'; // Rosa
+            ctx.fillRect(11, 20, 3, 3);
+            ctx.fillStyle = '#fdcb6e'; // Amarillo suave
+            ctx.fillRect(16, 20, 3, 3);
+            ctx.fillStyle = '#55a3ff'; // Azul claro
+            ctx.fillRect(21, 20, 3, 3);
+            
+            // Convertir a ICO y descargar
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const link = document.getElementById('download');
+                link.href = url;
+                link.download = 'favicon.ico';
+                link.style.display = 'block';
+                link.textContent = 'Descargar favicon.ico';
+            }, 'image/x-icon');
+        }
+        
+        // Generar automáticamente al cargar
+        window.onload = generateFavicon;
+    </script>
+</body>
+</html>

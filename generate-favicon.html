@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generador de Favicon</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="32" height="32"
+        style="border: 1px solid #ccc; image-rendering: pixelated; width: 128px; height: 128px;"></canvas>
+    <br><br>
+    <button onclick="generateFavicon()">Generar Favicon</button>
+    <button onclick="downloadFavicon()">Descargar ICO</button>
+    <br><br>
+    <div id="output"></div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function generateFavicon() {
+            // Limpiar canvas
+            ctx.clearRect(0, 0, 32, 32);
+
+            // Crear gradiente de fondo
+            const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+
+            // Fondo redondeado
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.roundRect(2, 2, 28, 28, 4);
+            ctx.fill();
+
+            // Estantería (líneas horizontales)
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(6, 10, 20, 2);
+            ctx.fillRect(6, 20, 20, 2);
+
+            // Elementos de colección (rectángulos coloridos)
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'];
+            const positions = [7, 11, 15, 19, 23];
+
+            colors.forEach((color, i) => {
+                ctx.fillStyle = color;
+                ctx.fillRect(positions[i], 12, 3, 8);
+
+                // Pequeño detalle blanco
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                ctx.fillRect(positions[i] + 1, 14, 1, 1);
+            });
+
+            // Mostrar resultado
+            const dataURL = canvas.toDataURL();
+            document.getElementById('output').innerHTML = `
+                <p>Favicon generado:</p>
+                <img src="${dataURL}" style="width: 64px; height: 64px; image-rendering: pixelated;">
+                <br><br>
+                <textarea style="width: 100%; height: 100px;">${dataURL}</textarea>
+            `;
+        }
+
+        function downloadFavicon() {
+            // Crear un canvas más grande para mejor calidad
+            const bigCanvas = document.createElement('canvas');
+            bigCanvas.width = 64;
+            bigCanvas.height = 64;
+            const bigCtx = bigCanvas.getContext('2d');
+
+            // Escalar la imagen
+            bigCtx.imageSmoothingEnabled = false;
+            bigCtx.drawImage(canvas, 0, 0, 32, 32, 0, 0, 64, 64);
+
+            // Descargar como PNG (más compatible que ICO)
+            const link = document.createElement('a');
+            link.download = 'favicon.png';
+            link.href = bigCanvas.toDataURL();
+            link.click();
+        }
+
+        // Generar automáticamente al cargar
+        generateFavicon();
+    </script>
+</body>
+
+</html>

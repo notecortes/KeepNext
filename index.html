@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeepNext</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Organiza tus películas, series, libros, videojuegos y restaurantes favoritos">
+    <meta name="theme-color" content="#4a5568">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Mi Colección">
+    <meta name="msapplication-TileColor" content="#4a5568">
+    <meta name="msapplication-config" content="browserconfig.xml">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.svg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- External Scripts -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 data-i18n="app.title">KeepNext</h1>
+            <div class="auth-section">
+                <div class="language-selector-container">
+                    <label for="language-selector" data-i18n="language.select">Idioma:</label>
+                    <select id="language-selector" class="language-selector"
+                        onchange="window.changeLanguage(this.value)">
+                        <option value="es" data-i18n="language.spanish">Español</option>
+                        <option value="en" data-i18n="language.english">English</option>
+                    </select>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" data-i18n="theme.toggle" title="Cambiar tema">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div id="user-info" class="user-info hidden">
+                    <img id="user-avatar" class="user-avatar" src="" alt="Avatar">
+                    <span id="user-name"></span>
+                    <button id="logout-btn" class="btn btn-secondary" data-i18n="buttons.close">Cerrar Sesión</button>
+                </div>
+                <!-- Google OAuth elements will be configured dynamically -->
+                <div id="google-auth-container">
+                    <div id="google-signin-placeholder" style="display: none;" data-i18n="messages.loading">
+                        Cargando login con Google...
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Categories Section -->
+            <section class="categories-section">
+                <div class="section-header">
+                    <h2 data-i18n="categories.title">Categorías</h2>
+                    <button id="add-category-btn" class="btn btn-primary" data-i18n="categories.new">+ Nueva
+                        Categoría</button>
+                </div>
+                <div id="categories-container" class="categories-container">
+                    <!-- Categories will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Items Section -->
+            <section class="items-section">
+                <div class="section-header">
+                    <h2 id="items-title" data-i18n="items.title">Selecciona una categoría</h2>
+                    <div class="header-controls">
+                        <div class="search-filter-controls hidden" id="search-filter-controls">
+                            <div class="search-filter">
+                                <input type="text" id="filter-input" data-i18n="filter.placeholder"
+                                    placeholder="🔍 Buscar elementos..." class="filter-input">
+                                <button id="clear-filter-btn" class="clear-filter-btn hidden" data-i18n="filter.clear"
+                                    title="Limpiar búsqueda">&times;</button>
+                            </div>
+                        </div>
+                        <div class="sort-controls hidden" id="sort-controls">
+                            <label for="sort-select" data-i18n="sorting.title">Ordenar por:</label>
+                            <select id="sort-select" class="sort-select">
+                                <option value="manual" data-i18n="sorting.manual">Orden manual</option>
+                                <option value="newest" data-i18n="sorting.newest">Más recientes</option>
+                                <option value="oldest" data-i18n="sorting.oldest">Más antiguos</option>
+                                <option value="title-asc" data-i18n="sorting.title_asc">Título (A-Z)</option>
+                                <option value="title-desc" data-i18n="sorting.title_desc">Título (Z-A)</option>
+                                <option value="rating-high" data-i18n="sorting.rating_high">Mejor valorados</option>
+                                <option value="rating-low" data-i18n="sorting.rating_low">Peor valorados</option>
+                            </select>
+                            <button id="sort-direction-btn" class="sort-direction-btn"
+                                data-i18n="sorting.change_direction" title="Cambiar dirección">
+                                ↓
+                            </button>
+                        </div>
+                        <button id="add-item-btn" class="btn btn-primary hidden" data-i18n="items.new">+ Nuevo
+                            Elemento</button>
+                    </div>
+                </div>
+                <div id="manual-sort-hint" class="manual-sort-hint hidden" data-i18n="sorting.manual_hint">
+                    🖱️ Arrastra las tarjetas para reordenarlas manualmente
+                </div>
+                <div id="items-container" class="items-container">
+                    <!-- Items will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Add Category Modal -->
+    <div id="category-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="categories.new">Nueva Categoría</h3>
+                <button class="close-btn" data-i18n="accessibility.close_modal" title="Cerrar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="category-name" data-i18n="categories.placeholder"
+                    placeholder="Nombre de la categoría" class="input-field">
+            </div>
+            <div class="modal-footer">
+                <button id="save-category-btn" class="btn btn-primary" data-i18n="buttons.save">Guardar</button>
+                <button class="btn btn-secondary close-btn" data-i18n="buttons.cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div id="item-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="item-modal-title" data-i18n="items.new">Nuevo Elemento</h3>
+                <button class="close-btn" data-i18n="accessibility.close_modal" title="Cerrar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="item-title" data-i18n="items.title_placeholder" placeholder="Título"
+                    class="input-field">
+                <div class="rating-section">
+                    <label data-i18n="items.rating">Valoración:</label>
+                    <div class="stars-container">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                <div class="search-section">
+                    <button id="search-info-btn" class="btn btn-secondary" data-i18n="items.search_info">Buscar
+                        Información</button>
+                    <div id="search-results" class="search-results hidden"></div>
+                </div>
+                <textarea id="item-description" data-i18n="items.description_placeholder" placeholder="Descripción"
+                    class="textarea-field"></textarea>
+                <input type="url" id="item-image" data-i18n="items.image_placeholder" placeholder="URL de la imagen"
+                    class="input-field">
+                <input type="text" id="item-where-to-watch" data-i18n="items.where_to_watch_placeholder"
+                    placeholder="¿Dónde verla? (Netflix, Amazon Prime, HBO...)"
+                    class="input-field where-to-watch-field">
+            </div>
+            <div class="modal-footer">
+                <button id="save-item-btn" class="btn btn-primary" data-i18n="buttons.save">Guardar</button>
+                <button class="btn btn-secondary close-btn" data-i18n="buttons.cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+haz una aplicacion en javascript con flexbox que sirva para guardar peliculas, series, libros, y otras categorias. Tengo que poder añadir categorias, y elementos a cada categoria. los elementos a añadir se pueden valorar con estrellas, buscara imagenes y resumens a añadir en función del titulo por internet. 
+Ademas permite loguearse con una cuenta de google para poder conservarlo.
+
+Haz que la aplicacion no se haga con node, y refactoriza lo mejor posible para que se puedan reutilizar y mantener facilmente el codigo
+
+- Integración con APIs reales (OMDB para películas, Google Books API, etc.)
+Filtros y búsqueda de elementos
+Exportar/importar colección
+Modo oscuro
+Sincronización en la nube
+Funcionalidades de exportar/importar
+Mejoras en el diseño
+
+
+
+Compartir listas con amigos
+Exportar/importar datos
+Estadísticas y gráficos
+Recomendaciones basadas en gustos
+Notificaciones de nuevos lanzamientos
+
+
+KeepNext
+
+
+// Forzar recarga de datos
+forceLoad();
+
